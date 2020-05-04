@@ -20,8 +20,8 @@
     "//1"  : "============================",
     "//2"  : " The following builds fails ",
     "//3"  : "============================",
-    "build1": "babel src --delete-dir-on-start -d ./dist1 -x '.ts,.js' --ignore node_modules/*.ts,**/*.ignore.ts",
-    "build2": "babel src --delete-dir-on-start -d ./dist2 -x '.ts,.js' --ignore='node_modules/*.ts,**/*.ignore.ts'",
+    "build1": "babel src --delete-dir-on-start -d ./dist1 -x '.ts,.js' --ignore **/node_modules/**/*.ts,**/*.ignore.ts",
+    "build2": "babel src --delete-dir-on-start -d ./dist2 -x '.ts,.js' --ignore='**/node_modules/**/*.ts,**/*.ignore.ts'",
     "start1": "node dist1/index.js",
     "start2": "node dist2/index.js"
 
