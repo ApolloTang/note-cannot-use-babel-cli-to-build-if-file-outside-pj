@@ -1,0 +1,29 @@
+{
+  "name": "babel-can-not-load-file-outside-pj-folder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "dev1":      "nodemon --watch src --ext 'ts' --exec  babel-node --extensions='.ts' --ignore='node_modules/**/*.ts,**/*.ignore.ts' src/index.ts",
+    "dev1:fail": "nodemon --watch src --ext 'ts' --exec  babel-node           -x='.ts' --ignore='node_modules/**/*.ts,**/*.ignore.ts' src/index.ts",
+    "dev2":      "nodemon --watch src --ext 'ts' --exec 'babel-node            -x .ts   --ignore=node_modules/**/*.ts,**/*.ignore.ts  src/index.ts'",
+    "dev3":      "nodemon --watch src --ext 'ts' --exec 'babel-node            -x .ts         -i node_modules/**/*.ts,**/*.ignore.ts  src/index.ts'",
+    "dev4":      "nodemon --watch src --ext 'ts' --exec 'babel-node            -x .ts         -i=node_modules/**/*,**/*.ignore.ts  src/index.ts'",
+    "//1"  : "============================",
+    "//2"  : " The following builds fails ",
+    "//3"  : "============================",
+    "build1": "babel src --delete-dir-on-start -d ./dist1 -x '.ts,.js' --ignore node_modules/*.ts,**/*.ignore.ts",
+    "build2": "babel src --delete-dir-on-start -d ./dist2 -x '.ts,.js' --ignore='node_modules/*.ts,**/*.ignore.ts'",
+    "start1": "node dist1/index.js",
+    "start2": "node dist2/index.js"
+
+  }
+}
