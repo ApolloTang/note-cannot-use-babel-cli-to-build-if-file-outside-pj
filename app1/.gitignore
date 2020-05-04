@@ -1,4 +1,5 @@
 node_modules
+*.log
 !src/node_modules/
 !dist1/node_modules/
 !dist2/node_modules/
